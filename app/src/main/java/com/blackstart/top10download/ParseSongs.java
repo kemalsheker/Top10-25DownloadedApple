@@ -82,10 +82,10 @@ public class ParseSongs {
                 }
                 eventType = xpp.next();
             }
-            for(FieldEntry song:songs){
+            /*for(FieldEntry song:songs){
                 Log.d(TAG, "parse: ***********");
                 Log.d(TAG, "parse: " + song.toString());
-            }
+            }*/
 
         } catch (Exception e){
             status = false;

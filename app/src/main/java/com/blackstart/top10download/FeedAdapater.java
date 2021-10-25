@@ -14,13 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FeedAdapater extends RecyclerView.Adapter<FeedAdapater.ViewHolder> {
+public class FeedAdapater<T extends FieldEntry> extends RecyclerView.Adapter<FeedAdapater.ViewHolder> {
     private static final String TAG = "FeedAdapater";
 
-    private final ArrayList<FieldEntry> songs;
+    private final ArrayList<T> songs;
 
 
-    public FeedAdapater(ArrayList<FieldEntry> songs) {
+    public FeedAdapater(ArrayList<T> songs) {
         this.songs = songs;
     }
 
@@ -40,7 +40,7 @@ public class FeedAdapater extends RecyclerView.Adapter<FeedAdapater.ViewHolder> 
 
     @Override
     public void onBindViewHolder(FeedAdapater.ViewHolder holder, int position) {
-        FieldEntry entry = songs.get(position);
+        T entry = songs.get(position);
 
         // Set item views based on your views and data model
         TextView textViewArtist = holder.tvArtistName;
